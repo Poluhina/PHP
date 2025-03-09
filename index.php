@@ -1,34 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+    <meta charset="UTF-8">
+    <title>Галерея</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 10px; 
+        }
+        .gallery img { 
+            width: 200px; 
+            height: auto; 
+            border-radius: 5px; 
+            flex-basis: calc(33.333% - 10px); 
+        }
+    </style>
 </head>
 <body>
-   
-<?php
 
-$dayOfWeek = date("1");
+<h2>Галерея изображений</h2>
 
-if ($dayOfWeek == "Понедельник" || $dayOfWeek == "Среда" || $dayOfWeek == "Пятница") {
-   $johnSchedule = "8:00-12:00";
-} else {
-   $johnSchedule = "Нерабоций день";
-}
+<div class="gallery">
+    <?php
+    $dir = 'image/';
+    $files = scandir($dir);
 
-if ($dayOfWeek == "Вторник" || $dayOfWeek == "Четверг" || $dayOfWeek == "Суббота") {
-   $janeSchedule = "12:00-16:00";
-} else {
-   $janeSchedule = "Нерабоций день";
-}
+    foreach ($files as $file) {
+        if ($file != "." && $file != "..") {
+            echo "<img src='$dir$file' alt='Картинка'>";
+        }
+    }
+    ?>
+</div>
 
-echo "<table border='1'>";
-echo "<tr><th>№</th><th>Фамилия Имя</th><th>График работы</th></tr>";
-echo "<tr><th>1</td><td>John Styles</td><td>$johnSchedule</td></tr>";
-echo "<tr><th>2</td><td>Jane Doe</td><td>$janeSchedule</td></tr>";
-echo "</table>";
-
-?>
 </body>
 </html>
+
+
