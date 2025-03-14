@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    text-align: left;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+legend {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    margin: 10px 0; /* Пространство между вариантами */
+    font-size: 16px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: rgb(199, 50, 45);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: rgb(136, 7, 7);
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
+}
+
+
+
